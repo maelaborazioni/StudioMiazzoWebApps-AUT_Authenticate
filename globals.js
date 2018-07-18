@@ -66,7 +66,7 @@ function ma_sec_checkUser(_authObj) {
 		// when a user uses a wrong password, we keep track in the user table
 		
 		// get the record of the user
-		/** @type {JSFoundset<db:/svy_framework/sec_user>} */
+		/** @type {JSFoundSet<db:/svy_framework/sec_user>} */
 		var _fs_user = databaseManager.getFoundSet(_authObj.framework_db, 'sec_user');
 		_fs_user.addFoundSetFilterParam('owner_id', '=', dataset.getValue(1, 6));
 		_fs_user.addFoundSetFilterParam('user_name', '=', _authObj.username);
@@ -88,7 +88,7 @@ function ma_sec_checkUser(_authObj) {
 					/** @type {Number} */
 					var _passwordTimesWrong = dataset.getValue(1, 7);
 					
-					/** @type {JSFoundset<db:/svy_framework/sec_user_login_attempt>} */
+					/** @type {JSFoundSet<db:/svy_framework/sec_user_login_attempt>} */
 					var _fs_loginAttempt = databaseManager.getFoundSet(_authObj.framework_db, 'sec_user_login_attempt');
 					_fs_loginAttempt.find();
 					_fs_loginAttempt.user_id = dataset.getValue(1, 1);
